@@ -21,9 +21,9 @@ powConsumption$datetime <- strptime(powConsumption$datetime, "%Y-%m-%d %H:%M:%S"
 
 ## Creating plot
 with(powConsumption, plot(datetime, Sub_metering_1, type = "n", xlab = "", ylab = "Energy sub metering"))
-with(powConsumption, points(datetime, Sub_metering_1, type = "l"))
-with(powConsumption, points(datetime, Sub_metering_2, type = "l", col = "red"))
-with(powConsumption, points(datetime, Sub_metering_3, type = "l", col = "blue"))
+with(powConsumption, lines(datetime, Sub_metering_1))
+with(powConsumption, lines(datetime, Sub_metering_2, col = "red"))
+with(powConsumption, lines(datetime, Sub_metering_3, col = "blue"))
 legend("topright", lty = 1, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
 ## Copying created plot to png file
